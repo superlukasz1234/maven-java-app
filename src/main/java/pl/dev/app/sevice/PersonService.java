@@ -1,6 +1,7 @@
 package pl.dev.app.sevice;
 
 
+import pl.dev.app.model.Address;
 import pl.dev.app.model.Person;
 import pl.dev.app.repository.PersonsRepo;
 
@@ -18,12 +19,10 @@ public class PersonService {
         return persons;
     }
 
-    public Person addPerson( String firstName, String lastName, int age) {
+    public Person addPerson(String firstName, String lastName, int age, Address address) {
         int size = persons.size();
-
         int lastId = persons.get(size - 1).getId();
-
-        Person person = new Person(++lastId, firstName, lastName, age);
+        Person person = new Person(++lastId, firstName, lastName, age, address);
         persons.add(person);
         return person;
     }

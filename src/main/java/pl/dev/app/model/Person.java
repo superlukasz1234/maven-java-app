@@ -7,15 +7,17 @@ public class Person {
     private String firstName;
     private String lastName;
     private int age;
+    private Address address;
 
     public Person() {
     }
 
-    public Person(int id, String firstName, String lastName, int age) {
+    public Person(int id, String firstName, String lastName, int age, Address address) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
+        this.address = address;
     }
 
     public int getId() {
@@ -50,20 +52,12 @@ public class Person {
         this.age = age;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Person person = (Person) o;
-        return id == person.id &&
-                age == person.age &&
-                Objects.equals(firstName, person.firstName) &&
-                Objects.equals(lastName, person.lastName);
+    public Address getAddress() {
+        return address;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, firstName, lastName, age);
+    public void setAddress(Address address) {
+        this.address = address;
     }
 
     @Override
@@ -73,6 +67,7 @@ public class Person {
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", age=" + age +
+                ", address=" + address +
                 '}';
     }
 }

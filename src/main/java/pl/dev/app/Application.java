@@ -1,6 +1,7 @@
 package pl.dev.app;
 
 
+import pl.dev.app.model.Address;
 import pl.dev.app.model.Person;
 import pl.dev.app.sevice.PersonService;
 
@@ -44,7 +45,13 @@ public class Application {
                 String giveLastName = getString.nextLine();
                 System.out.println("Wiek: ");
                 int giveAge = getNumber.nextInt();
-                Person person = service.addPerson( giveFirstName, giveLastName, giveAge);
+                System.out.println("Ulice: ");
+                String giveStreet = getString.nextLine();
+                System.out.println("Numer domu: ");
+                String giveHouseNumber = getString.nextLine();
+                System.out.println("Miasto: ");
+                String giveCity = getString.nextLine();
+                Person person = service.addPerson(giveFirstName, giveLastName, giveAge, new Address(giveStreet,giveHouseNumber,giveCity));
                 System.out.println(person);
                 break;
             case 4:
