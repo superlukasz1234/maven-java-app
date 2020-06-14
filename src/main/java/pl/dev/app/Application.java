@@ -1,6 +1,7 @@
 package pl.dev.app;
 
 
+import pl.dev.app.model.Person;
 import pl.dev.app.sevice.PersonService;
 
 import java.util.Scanner;
@@ -35,16 +36,23 @@ public class Application {
                 int newId = getNumber.nextInt();
                 service.findById(newId).forEach(System.out::println);
                 break;
-                //
-//            case 3:
-//                System.out.println("Podaj dane osoby: ID, Imie, NAzwisko, wiek ");
-//
-//                service.addPerson(new Person()).forEach(System.out::println);
-//                break;
+            case 3:
+                System.out.println("Podaj dane osoby: ");
+                System.out.println("ID: ");
+                int giveId = getNumber.nextInt();
+                System.out.println("Imie: ");
+                String giveFirstName = getString.nextLine();
+                System.out.println("Nazwisko: ");
+                String giveLastName = getString.nextLine();
+                System.out.println("Wiek: ");
+                int giveAge = getNumber.nextInt();
+                Person person = service.addPerson(giveId, giveFirstName, giveLastName, giveAge);
+                System.out.println(person);
+                break;
             case 4:
                 System.out.println("Podaj numer ID ktore chcesz usunąc");
                 int newId1 = getNumber.nextInt();
-                if (!service.removeById(newId1)){
+                if (!service.removeById(newId1)) {
                     System.out.println("Nie znaleziono osoby o takim ID");
                 }
                 System.out.println("Znaleziono osobę o podanym ID i ją usunięto");

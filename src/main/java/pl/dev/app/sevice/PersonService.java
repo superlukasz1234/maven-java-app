@@ -18,12 +18,11 @@ public class PersonService {
         return persons;
     }
 
-//   public List<Person> addPerson(Person p) {     //persons. - bo to ma moja liste np. pesons.add(new Person())
-//        if (persons == null) {
-//            persons.add(new Person(p));
-//        }
-//        return persons;
-//    }
+    public Person addPerson(int id, String firstName, String lastName, int age) {
+        Person person = new Person(id, firstName, lastName, age);
+        persons.add(person);
+        return person;
+    }
 
     public List<Person> findById(int id) {
         List<Person> result = new ArrayList<>();
