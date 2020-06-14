@@ -35,7 +35,7 @@ public class Application {
                 int newId = getNumber.nextInt();
                 service.findById(newId).forEach(System.out::println);
                 break;
-                // komentazr
+                //
 //            case 3:
 //                System.out.println("Podaj dane osoby: ID, Imie, NAzwisko, wiek ");
 //
