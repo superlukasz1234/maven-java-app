@@ -58,7 +58,7 @@ public class Application {
                 String giveHouseNumber = getString.nextLine();
                 System.out.println("Miasto: ");
                 String giveCity = getString.nextLine();
-                Person person = null;
+                Person person;
                 if (checkCorrected(validationList)) {
                     person = service.addPerson(giveFirstName, giveLastName, giveAge, new Address(giveStreet, giveHouseNumber, giveCity));
                     System.out.println(person);
