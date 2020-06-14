@@ -11,10 +11,10 @@ public class PersonsRepo {
     private static final List<Person> persons = new ArrayList<>();
 
     private PersonsRepo() {
-        persons.add(new Person(9, "e", "E", 55));
-        persons.add(new Person(10, "f", "F", 48));
-        persons.add(new Person(11, "g", "G", 33));
-        persons.add(new Person(12, "h", "H", 29));
+        persons.add(new Person(1, "e", "E", 55));
+        persons.add(new Person(2, "f", "F", 48));
+        persons.add(new Person(3, "g", "G", 33));
+        persons.add(new Person(4, "h", "H", 29));
     }
 
     private List<Person> getList() {

@@ -18,8 +18,12 @@ public class PersonService {
         return persons;
     }
 
-    public Person addPerson(int id, String firstName, String lastName, int age) {
-        Person person = new Person(id, firstName, lastName, age);
+    public Person addPerson( String firstName, String lastName, int age) {
+        int size = persons.size();
+
+        int lastId = persons.get(size - 1).getId();
+
+        Person person = new Person(++lastId, firstName, lastName, age);
         persons.add(person);
         return person;
     }

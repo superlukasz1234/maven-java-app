@@ -38,15 +38,13 @@ public class Application {
                 break;
             case 3:
                 System.out.println("Podaj dane osoby: ");
-                System.out.println("ID: ");
-                int giveId = getNumber.nextInt();
                 System.out.println("Imie: ");
                 String giveFirstName = getString.nextLine();
                 System.out.println("Nazwisko: ");
                 String giveLastName = getString.nextLine();
                 System.out.println("Wiek: ");
                 int giveAge = getNumber.nextInt();
-                Person person = service.addPerson(giveId, giveFirstName, giveLastName, giveAge);
+                Person person = service.addPerson( giveFirstName, giveLastName, giveAge);
                 System.out.println(person);
                 break;
             case 4:
