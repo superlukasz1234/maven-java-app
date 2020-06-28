@@ -63,7 +63,7 @@ public class Application {
                     person = service.addPerson(giveFirstName, giveLastName, giveAge, new Address(giveStreet, giveHouseNumber, giveCity));
                     System.out.println(person);
                 } else {
-                    System.out.println("jakieś pole jest chujowe");
+                    System.out.println("jakieś pole jest niepoprawne");
                 }
 
                 validationList.removeAll(validationList);
