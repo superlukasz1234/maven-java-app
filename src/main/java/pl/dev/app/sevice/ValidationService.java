@@ -5,7 +5,10 @@ public class ValidationService {
     // dwie metody String i int
 
     public static boolean validate(int value) {
-        return true;
+        if(value > 16 && value <100){
+            return true;
+        }
+        return false;
     }
 
     public static boolean validate(String value) {
