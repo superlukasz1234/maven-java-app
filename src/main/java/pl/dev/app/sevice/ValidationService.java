@@ -1,8 +1,7 @@
 package pl.dev.app.sevice;
 
 public class ValidationService {
-    //sprawdza czy pole przekazalam jest puste czy jest null jeśli jest spacja to akcepyuje, sprzwdza czy zawiera spacje czy nul, numer domu
-    // dwie metody String i int
+    // lista validacji tutaj public static
 
     public static boolean validate(int value) {
         if(value > 16 && value <100){
@@ -12,6 +11,12 @@ public class ValidationService {
     }
 
     public static boolean validate(String value) {
+        final boolean blank = value.isBlank(); // String x = "   ";
+        final boolean empty = value.isEmpty(); // String x = "";
+        return !blank;
+    }
+
+    public static boolean addressValidation(String value) {
         return true;
     }
 }

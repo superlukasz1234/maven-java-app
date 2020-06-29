@@ -3,6 +3,7 @@ package pl.dev.app;
 
 import pl.dev.app.model.Address;
 import pl.dev.app.model.Person;
+import pl.dev.app.sevice.PersonDataService;
 import pl.dev.app.sevice.PersonService;
 import pl.dev.app.sevice.ValidationService;
 
@@ -15,6 +16,7 @@ public class Application {
     private static Scanner getString = new Scanner(System.in);
     private static PersonService service;
 
+    public static List<Boolean> validationList = new ArrayList<>();
     public static void main(String[] args) {
 
         service = new PersonService();
@@ -24,7 +26,7 @@ public class Application {
         do {
             switchFunction(number);
             showMenu();
-            number = getNumber.nextInt();
+            number = new Scanner(System.in).nextInt();
 
         } while (number != 0);
         System.out.println("Koniec");
@@ -32,7 +34,7 @@ public class Application {
 
     private static void switchFunction(int value) {
 
-        List<Boolean> validationList = new ArrayList<>();
+
         switch (value) {
             case 1:
                 service.getAllPersons().forEach(System.out::println);
@@ -44,13 +46,18 @@ public class Application {
                 break;
             case 3:
                 System.out.println("Podaj dane osoby: ");
-                System.out.println("Imie: ");
-                String giveFirstName = getString.nextLine();
-                validationList.add(ValidationService.validate(giveFirstName));
+                final String giveFirstName = PersonDataService.setFirstName();
                 System.out.println("Nazwisko: ");
                 String giveLastName = getString.nextLine();
                 System.out.println("Wiek: ");
-                int giveAge = getNumber.nextInt();
+                int giveAge;
+
+                try {
+                    giveAge = getNumber.nextInt();
+                } catch (RuntimeException e) {
+                    System.out.println("Wartosc musi byc int...");
+                    break;
+                }
                 validationList.add(ValidationService.validate(giveAge));
                 System.out.println("Ulice: ");
                 String giveStreet = getString.nextLine();

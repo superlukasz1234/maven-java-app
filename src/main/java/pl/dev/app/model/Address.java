@@ -1,8 +1,11 @@
 package pl.dev.app.model;
 
 public class Address {
+    // validacja czy nie ma znakow spec
     private String street;
+    // tu niech będzie in
     private String houseNumber;
+    // czy nie ma znakow spec
     private String city;
 
     public Address() {
